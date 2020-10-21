@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% include "_changeLeaveAllowanceModal.html" %}
+{% block content %}
+    <body>
+    <div id="page-content-wrapper" style="width: 100%">
+        <div class="card border-danger">
+            <div class="card-header bg-danger text-white">
+                Leave request history
+            </div>
+            <div class="card-body">
+                <div class="table table-striped table-bordered">
+                    <table id="leaveRequestList" class="display" width="100%">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Leave Balance</th>
+                            <th>Leave Allowance</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </body>
+{% endblock %}

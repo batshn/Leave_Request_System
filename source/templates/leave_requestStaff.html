@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+    <body>
+    <div id="page-content-wrapper" style="width: 100%">
+        <div class="card">
+            <div class="card-header">
+                Leave requests from staffs
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="leaveRequestListStaff" class="display" width="100%">
+                        <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Name</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </body>
+{% endblock %}

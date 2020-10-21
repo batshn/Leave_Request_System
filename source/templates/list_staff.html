@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+    <body>
+    <div id="page-content-wrapper" style="width: 100%">
+        <div class="card">
+            <div class="card-header">
+                Staffs List
+            </div>
+            <div class="card-body">
+                {% if require_add_staff %}
+                    <p> You have no staff to manage please add one <a href="{{ url_for('base.add_staff') }}">here</a></p>
+                {% else %}
+                    <div class="table-responsive">
+                        <table id="staffListByManager" class="display" width="100%">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Leave Balance</th>
+                                <th>Leave Allowance</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+    </body>
+{% endblock %}

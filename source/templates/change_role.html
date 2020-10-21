@@ -1,0 +1,23 @@
+<form name="changeRole" action="{{ url_for('base.changeStaffRole') }}" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <table class="table table-borderless">
+        <input type="hidden" name="userID" id="userID" value="{{ data.staffID }}">
+        <tr>
+            <td>Name :</td>
+            <td>{{ data.staffName }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.role.label }} :</td>
+            <td>
+                {{ form.role(class='form-control') }}
+                {% for error in form.role.errors %}
+                        <span class="error-message"> {{ error }} </span>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>{{ form.submit(class='btn btn-success') }}</td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% include "_changeLeaveAllowanceModal.html" %}
+{% block content %}
+    <body>
+    <div id="page-content-wrapper" style="width: 100%">
+        <div class="card">
+            <div class="card-header">
+                Staffs List
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="availableStaffList" class="display" width="100%">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </body>
+{% endblock %}

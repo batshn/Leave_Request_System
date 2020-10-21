@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+    <body>
+    <div id="page-content-wrapper" style="width: 100%">
+        <div class="card">
+            <div class="card-header">
+                Public Holidays
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="publicHolidayList" class="display" width="100%">
+                        <thead>
+                        <tr>
+                            <th>Holiday</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 10px;">
+        <form name="add_public_holiday" action="{{ url_for('base.addPublicHoliday') }}" method="post" novalidate>
+            <button class="btn btn-mini btn-info btn-sm" ">Add Public Holiday</button>
+        </form>
+    </div>
+
+    </body>
+{% endblock %}

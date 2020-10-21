@@ -1,0 +1,70 @@
+
+
+{% block main %}
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Signin</title>
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+        </style>
+        <!-- Custom styles for this template -->
+        <link href="{{ url_for('static', filename='css/signin.css') }}" rel="stylesheet">
+
+
+    </head>
+    <body>
+    <div class="container">
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        <p>{{ message }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+
+        <div>
+            <img class="mb-4 logo" src="{{ url_for('static', filename='img/RMIT.png') }}" width="50" height="50"
+                 alt=""/>
+        </div>
+        <form class="form-signin">
+            <div class="card">
+                <div class="card-body">
+                    <form name="login" action="/" method="POST">
+                        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                        <label for="inputEmail" class="sr-only">User name</label>
+                        <input name="username" id="inputEmail" class="form-control" placeholder="Enter Username"
+                               required autofocus>
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" name="password" id="inputPassword" class="form-control"
+                               placeholder="Password"
+                               required>
+                        <button class="btn btn-lg btn-danger btn-block" type="submit" formmethod="post">Sign in</button>
+                    </form>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    </body>
+    </html>
+{% endblock %}

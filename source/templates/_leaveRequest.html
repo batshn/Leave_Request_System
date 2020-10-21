@@ -1,0 +1,14 @@
+<form id="leaveRequest" name="leaveRequest" action="{{ url_for('base.leave_request') }}" method="post" novalidate>
+    <div class="form-group">
+        <label>
+            {{ form.leaveRequest.label }} :
+        </label>
+        {{ form.leaveRequest(class='form-control') }}
+         <div class="invalid-feedback">
+            Please choose a valid telephone number (between 7 and 10 characters).
+          </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+</form>

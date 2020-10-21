@@ -1,0 +1,47 @@
+<form name="changeLeave" action="{{ url_for('base.change_leaveAllowance') }}" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <table class="table table-borderless">
+        <input type="hidden" name="userID" id="userID" value="{{ data.staffID }}">
+        <tr>
+            <td>Name :</td>
+            <td>{{ data.staffName }}</td>
+        </tr>
+
+        <tr>
+            <td>Annual Leave Allowance</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Carers Leave Allowance</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Sick Leave With Certificate Allowance</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Sick Leave Without Certificate Allowance</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>Parental Leave Allowance</td>
+            <td></td>
+        </tr>
+
+
+        <tr>
+            <td>{{ form.limitLeaveAllowance.label }} :</td>
+            <td>
+                {{ form.limitLeaveAllowance(size=35, class='form-control', value=data.leaveLimit) }}
+                {% for error in form.limitLeaveAllowance.errors %}
+                        <span class="error-message"> {{ error }} </span>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>{{ form.submit(class='btn btn-success') }}</td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,59 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col">
+    </div>
+
+    <div class="col-6">
+    <form name="add_public_holiday" action="{{ url_for('base.addPublicHoliday') }}" method="post" novalidate>
+        <h2 class="text-center">Add Public Holiday</h2>
+        {{form.hidden_tag()}}
+
+        <table class="table table-borderless">
+           
+
+            <tr>
+                <td>{{ form.holidayName.label }} :</td>
+                <td>
+                    {{ form.holidayName(size=35, class='form-control')}} 
+                    {% for error in form.holidayName.errors %}
+                        <span class="error-message"> {{ error }} </span>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>{{ form.startDate.label }} : </td>
+                <td>
+                    {{ form.startDate(size=35, class='form-control', format='%Y-%m-%d')}}
+                    {% for error in form.startDate.errors %}
+                        <span class="error-message"> {{ error }} </span>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>{{ form.endDate.label }} : </td>
+                <td>
+                    {{ form.endDate(size=35, class='form-control', format='%Y-%m-%d')}}
+                    {% for error in form.endDate.errors %}
+                        <span class="error-message"> {{ error }} </span>
+                    {% endfor %}
+                </td>
+            </tr>
+            
+           
+            <tr>
+                <td ></td>
+                <td >{{ form.submit(class='btn btn-success') }}</td>
+            </tr>
+        </table>
+    </form>
+    </div>
+
+    <div class="col">
+    </div>
+
+</div>
+
+{% endblock %}
